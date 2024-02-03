@@ -66,7 +66,7 @@ export default function Home() {
               <DrawerTitle>Login</DrawerTitle>
             </DrawerHeader>
             {close === false ? (
-              <iframe src="https://etlabclient.streamlit.app/" width={"100%"} height={"100%"} />
+              <iframe src="https://etlabclient.streamlit.app/?embedded=true" width={"100%"} height={"100%"} />
             ) : (
               <div className="flex flex-col items-center m-10">
                 <h1 className="text-2xl mb-5">Successfully registered 🎉</h1>
