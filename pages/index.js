@@ -12,6 +12,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 import { useEffect, useState } from "react";
+import Login from "@/components/main/Login";
  
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,16 +37,13 @@ export default function Home() {
   //     // for the token so that i can close the iframe by a trigger here 
   //     getTokenResponse();
   // })
-  if (isLogged!=true){
-    setInterval(()=>{
-      getTokenResponse();
-    },3000)
-  }
+
   return (
     <div className="flex flex-col justify-items-center  m-5">
        <h1 className="text-5xl leading-[3rem] mt-10 mb-3">Sargam Thithram Thalam</h1>
        <Button>Login with Eltab</Button>
-       <Drawer>
+       <Login/>
+       {/* <Drawer>
       <DrawerTrigger asChild>
         <Button variant="outline">Open Drawer</Button>
       </DrawerTrigger>
@@ -60,7 +58,7 @@ export default function Home() {
           />
         </div>
       </DrawerContent>
-    </Drawer>
+    </Drawer> */}
     </div>
   );
 }

@@ -12,7 +12,6 @@ export default function () {
     fetch('https://sctce.etlab.in/student/profile', {
       method: 'GET',
       headers: {
-        'Cookie': cookie,
         'Host': 'sctce.etlab.in'
       }
     }).then(response => {
@@ -23,13 +22,11 @@ export default function () {
   };
 
   const userLogin = ()=>{
-    fetch(`/api/login`,{
+    fetch(`https://sctce.etlab.in/user/login`,{
         method:'POST',
-        body:JSON.stringify({
-            'username':username,
-            'password':password
-        })
-    }).then(response=>response.json())
+        body:`LoginForm%5Busername%5D:${username}&LoginForm%5Bpassword%5D:${password}&yt0=`
+    }).then(response=>response.text())
+    .then(data=>studentInfos())
   }
   return (
     <div className="flex-col justify-items-center m-5">
